@@ -1,17 +1,12 @@
 (function () {
-
     "use strict";
 
-    var myApp = angular.module('myApp', []);
+    var artistControllers = angular.module('artistControllers', []);
 
-    // add [] to prevent js minify
-    myApp.controller('MyController', ['$scope', '$http', '$log', function ($scope, $http, $log) {
-        var myController = this;
-        $scope.artists = myController.artists = [];
-
+    artistControllers.controller('ListController', ['$scope', '$http', function ($scope, $http) {
         $http.get('js/data.json').success(function (data) {
-            $scope.artists = myController.artists = data;
-            $log.info("load json data successful");
+            $scope.artists = data;
+            $scope.artistOrder = 'name';
         });
     }]);
 
