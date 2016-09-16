@@ -1,0 +1,1 @@
+This is the source code for angular js 1 up and running course from lynda.com
